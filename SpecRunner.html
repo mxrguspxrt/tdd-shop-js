@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Jasmine Spec Runner v2.0.0</title>
+
+  <link rel="shortcut icon" type="image/png" href="lib/jasmine-2.0.0/jasmine_favicon.png">
+  <link rel="stylesheet" type="text/css" href="lib/jasmine-2.0.0/jasmine.css">
+
+  <script type="text/javascript" src="lib/jasmine-2.0.0/jasmine.js"></script>
+  <script type="text/javascript" src="lib/jasmine-2.0.0/jasmine-html.js"></script>
+  <script type="text/javascript" src="lib/jasmine-2.0.0/boot.js"></script>
+
+  <!-- include source files here... -->
+  <script type="text/javascript" src="src/Product.js"></script>
+  <script type="text/javascript" src="src/CartItem.js"></script>
+  <script type="text/javascript" src="src/Cart.js"></script>
+
+  <!-- include spec files here... -->
+  <script type="text/javascript" src="spec/CartSpec.js"></script>
+
+</head>
+
+<body>
+The Store
+<pre>
+* I want to add products to cart and get the total amount to be paid.
+* I want to specify the quantity of product that is added to the cart.
+* I want to get a receipt: “product name \t quantity x price = total price”
+* I want to specify the quantity in kilograms for some items. I want to see the unit on the receipt after the quantity if applicable. The quantity should have 3 decimal places if unit exists, no decimal places otherwise.
+* I want to see each product only once on the receipt even if i have added it multiple times. The quantitites must be added together.
+* I want to see another item added automatically when I add specific items (e.g. bottle with drinks).
+* I want to use an external service to get information about automatically added items. The external service returns name and price of the item that must be added.
+* I want to specify that certain items cannot be purchased at some specific hours.
+* I want to specify that certain products have a discount percentage that is deducted from the list price. I want to see the list price, discount percentage and  the discounted price on the receipt.
+* I want to specify that any discount scheme is only available for a limited time period.
+* I want to specify that the discount as a new price for some products (instead of percentage).
+* I want to specify the discount as a promotion - get 3 for the price of 2. I want to see the applied discount on the receipt.
+* I want to apply a discount as a percentage to the whole cart. The discount does not apply to items that have already a discount applied. The receipt must only show the discount amount.
+* I want to specify that a discount of a certain amount is applied when two specific products are purchased together.
+* I want to specify that a discount is only available on specific hours of the day.
+* I want to specify that certain items require that the buyer must be of specific age. The exact birthday of the customer must be used to calculate availability.
+</pre>
+</body>
+</html>
