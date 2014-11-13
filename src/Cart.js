@@ -1,19 +1,3 @@
-function Product(opts) {
-  opts = opts || {};
-  this.name = opts.name;
-  this.price = opts.price;
-  this.unit = opts.unit;
-}
-
-
-
-Product.prototype.getName = function() {
-  return name;
-};
-
-Product.prototype.getAutomaticallyAddedProducts = function() {
-  return [];
-}
 
 
 function Cart() {
@@ -29,7 +13,15 @@ Cart.prototype.getTotalAmount = function() {
   return sum;
 };
 
+
 Cart.prototype.addProduct = function(product, quantity) {
+
+  var now = new Date();
+
+  if (!product.isValidBuytime(now.getHours())) {
+    throw "can't buy at this time";
+  }
+
   var existingItem = this.items.filter(function(item) {
     return item.product==product;
   })[0];

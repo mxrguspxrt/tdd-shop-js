@@ -71,5 +71,28 @@ describe("Cart", function() {
 
   });
 
+  describe("time restriction for product", function() {
+
+    beforeEach(function() {
+      window.DateOld = Date;
+      Date = function() {
+        return new DateOld("October 13, 2014 9:13:00");
+      }
+    });
+
+    afterEach(function() {
+      Date = this.DateOld;
+    });
+
+    it("does not let add alcohol outside of selling time into cart", function() {
+      var alco = new Product({validBuytime: {start: 10, end: 22}});
+
+      expect(function() {
+        cart.addProduct(alco);
+      }).toThrow();
+    });
+
+  });
+
 });
 
